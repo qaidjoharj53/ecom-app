@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List
+from .common import BasePaginatedResponse
 
 class OrderItem(BaseModel):
     productId: str
@@ -24,5 +25,5 @@ class OrderListItem(BaseModel):
     id: str
     items: List[OrderItemDetails]
 
-class OrdersResponse(BaseModel):
+class PaginatedOrdersResponse(BasePaginatedResponse):
     data: List[OrderListItem]

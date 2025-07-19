@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List
+from .common import BasePaginatedResponse
 
 class SizeQuantity(BaseModel):
     size: str
@@ -18,5 +19,5 @@ class ProductListItem(BaseModel):
     name: str
     price: float
 
-class ProductsResponse(BaseModel):
+class PaginatedProductsResponse(BasePaginatedResponse):
     data: List[ProductListItem]
