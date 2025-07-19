@@ -1,9 +1,2 @@
-/__pycache__
-/crud
-/crud.py
-/database.py
-/models
-/models.py
-/routes
-/schemas
+*__pycache__
 /venv
