@@ -222,8 +222,7 @@ The API exposes the following endpoints:
 -   Pagination is implemented using `limit` and `offset` query parameters.
 -   Product filtering supports partial name matching and size filtering.
 -   Order listing performs a MongoDB aggregation to join product details with order items.
--   The project uses Motor for asynchronous MongoDB operations to improve performance.
 
 ## Contact
 
-For any questions or issues, please contact the project maintainer.
+For any questions or issues, please contact the project maintainer - [Qaidjohar Jukker](https://qaidjoharj.me/).
