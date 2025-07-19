@@ -10,6 +10,9 @@ class OrderCreate(BaseModel):
     userId: str
     items: List[OrderItem]
 
+class OrderResponse(BaseModel):
+    id: str
+
 class ProductDetails(BaseModel):
     id: str
     name: str
@@ -18,11 +21,9 @@ class OrderItemDetails(BaseModel):
     productDetails: ProductDetails
     qty: int
 
-class OrderResponse(BaseModel):
-    id: str
-
 class OrderListItem(BaseModel):
     id: str
+    total: float = 0.0
     items: List[OrderItemDetails]
 
 class PaginatedOrdersResponse(BasePaginatedResponse):

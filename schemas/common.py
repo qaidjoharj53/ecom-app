@@ -4,10 +4,7 @@ from typing import Optional, List
 class PaginationInfo(BaseModel):
     next: Optional[str]
     limit: int
-    previous: Optional[str]
-
-class BaseResponse(BaseModel):
-    id: str
+    previous: Optional[int]
 
 class BasePaginatedResponse(BaseModel):
     page: PaginationInfo
