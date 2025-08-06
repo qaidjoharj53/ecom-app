@@ -81,7 +81,7 @@ def list_orders_with_details(db, user_id: str, limit: int, offset: int) -> Tuple
     # If pipeline fails
     if not orders:
         # Fallback: manual data fetching
-        raw_orders = list(db["orders"].find({"userId": user_id}).skip(offset).limit(limit))
+        raw_orders = list(db.orders.find({"userId": user_id}).skip(offset).limit(limit))
         
         # Process each order manually
         for order in raw_orders:
@@ -92,7 +92,7 @@ def list_orders_with_details(db, user_id: str, limit: int, offset: int) -> Tuple
             for item in order.get("items", []):
                 # Check if productId exists in the item
                 if "productId" in item:
-                    product = db["products"].find_one({"_id": ObjectId(item["productId"])})
+                    product = db.products.find_one({"_id": ObjectId(item["productId"])})
                     if product:
                         # Calculate cost for this item and add to grand total
                         item_total = item["qty"] * product["price"]
